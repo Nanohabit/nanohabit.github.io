@@ -1,73 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="h-full">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nanohabit</title>
-<style>
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-        margin: 0;
-        background: #ffffff;
-        color: #111;
-        text-align: center;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nanohabit — Tiny Apple Watch apps that improve your day</title>
+  <meta name="description" content="Nanohabit builds minimal, wrist‑first micro‑apps for Apple Watch: Social Battery, Did I…?, and Water Tap (Watch2O). Small tools, big clarity." />
+  <link rel="preconnect" href="https://fonts.googleapis href="https://f="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:w600&display=swap
+  <script/cdn.tailwindcss.com</script>
+  <style>
+    :root{
+      --bg: #fafbff;
+      --card: #ffffff;
+      --ink: #0f172a; /* slate-900 */
+      --muted:#475569; /* slate-600 */
+      --accent:#6366f1; /* indigo-500 */
+      --accent2:#8b5cf6; /* violet-500 */
+      --accent3:#d946ef; /* fuchsia-500 */
     }
-    header {
-        padding: 80px 20px 20px;
+    * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; }
+    .title-font { font-family: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    h1 {
-        font-size: 48px;
-        margin: 0;
-        font-weight: 600;
-    }
-    p.tagline {
-        font-size: 20px;
-        opacity: 0.7;
-        margin-top: 10px;
-    }
-    section {
-        padding: 40px 20px;
-    }
-    h2 {
-        font-size: 32px;
-        margin-bottom: 10px;
-    }
-    .coming {
-        opacity: 0.5;
-        font-size: 16px;
-    }
-    footer {
-        padding: 30px;
-        background: #f5f5f7;
-        font-size: 14px;
-        color: #555;
-    }
-</style>
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .float { animation: float 4s ease-in-out infinite; }
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nanohabit — Tiny Apple Watch apps that improve your day" />
+  <meta property="og:description" content="Minimal, wrist‑first micro‑apps: Social Battery, Did I…?, Water Tap (Watch2O)." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nanohabit.github.io" />
+  <meta name="theme-color" content="#6366f1" />
 </head>
+<body class="h-full antialiased text-slate-900" style="background: linear-gradient(180deg,#fafbff 0%, #f0f4ff 50%, #e8efff 100%);">
 
-<body>
+  <!-- NAV -->
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/60 border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      #NANOHABIT</a>
+      <nav class="hidden sm:flex gap-6 text-sm text-slate-600">
+        <a href="#apps"       <a href="#screenshots" class="hover:text-slate-900        <a href="#contact" class="hover:text-s/div>
+  </header>
 
-<header>
-    <h1>Nanohabit</h1>
-    <p class="tagline">Tiny Apple Watch apps that improve your day.</p>
-</header>
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply blur-3xl opacity-30"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply blur-3xl opacity-30"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-fuchsia-100 rounded-full mix-blend-multiply blur-3xl opacity-20"></div>
 
-<section>
-    <h2>Apps</h2>
-    <p>• Social Battery</p>
-    <p>• Did I…?</p>
-    <p>• Watcho2</p>
-    <p class="coming">More coming soon…</p>
-</section>
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center relative z-10">
+      <h1 class="title-font text-5xl md:text-7xl font-bold tracking-tight gradient-text">NANOHABIT</h1>
+      <p class="mt-4 text-lg md:text-xl text-slate-600">Tiny Apple Watch apps that improve your day.</p>
 
-<section>
-    <h2>About Nanohabit</h2>
-    <p>Nanohabit creates minimalistic, fast, wrist‑first micro‑apps designed for daily routines.</p>
-</section>
+      <!-- Watch mockup placeholder -->
+      <div class="mt-12 mx-auto w-48 h-56 md:w-56 md:h-64 rounded-[3rem] bg-gradient-to-b from-slate-800 to-slate-900 p-2 shadow-2xl float relative" aria-label="Apple Watch mockup placeholder">
+        <div class="w-full h-full rounded-[2.5rem] bg-black flex items-center justify-center overflow-hidden">
+          <div class="text-center">
+            <div class="w-16 h-16 mx-auto mb-3 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+              <span class="text-white text-2xl">⌚</span>
+            </div>
+            <span class="text-slate-400 text-xs">Mockup placeholder</span>
+          </div>
+        </div>
+        <!-- Watch crown -->
+        <div class="absolute right-[-8px] top-1/2 -translate-y-1/2 w-2 h-8 bg-slate-700 rounded-r-lg"></div>
+      </div>
 
-<footer>
-    © 2026 Nanohabit · All Rights Reserved
-</footer>
+      <div class="mt-10 flex items-center justify-center gap-3">
+        <a href="#apps" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 text-white text-sm hover:bg-slates-center gap-2 px-5 py-3 rounded-full bg-white text-slate
+  <section id="apps" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="title-font text-4xl md:text-5xl font-bold text-center mb-4">Our Apps</h2>
+      <p class="text-slate-500 text-center mb-12 text-lg">Small tools, big clarity.</p>
 
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- Social Battery -->
+        <article class="rounded-3xl p-6 border border-slate-200 bg-white/80 backdrop-blur hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-5 shadow-lg">
+            <span class="text-2xl">🔋</span>
+          </div>
+          <h3 class="title-font text-xl font-semibold">Social Battery</h3>
+          <p class="text-slate-600 text-sm mt-2">Track your social energy with a tap. See when to say “yes” or “not today”.</p>
+          <div class="mt-4 flex gap-2">
+            <a href="#" class="text-sm px-3 py-2#post-social-battery" class="text-sm px-3 py-2 rounded-lg border border-slate- I…? -->
+        <article class="rounded-3xl p-6 border border-slate-200 bg-white/80 backdrop-blur hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center mb-5 shadow-lg">
+            <span class="text-2xl">✓</span>
+          </div>
+          <h3 class="title-font text-xl font-semibold">Did I…?</h3>
+          <p class="text-slate-600 text-sm mt-2">Quick confirmations for locks, lights, or the stove — peace of mind on your wrist.</p>
+          <div class="mt-4 flex gap-2">
+            <a href="#" class="text-sm px-3 py-2 rounded-lg bg-slate-900 text-whiteTap (Watch2O) -->
+        <article class="rounded-3xl p-6 border border-slate-200 bg-white/80 backdrop-blur hover:shadow-xl transition">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center mb-5 shadow-lg">
+            <span class="text-2xl">💧</span>
+          </div>
+          <h3 class="title-font text-xl font-semibold">Water Tap (Watch2O)</h3>
+          <p class="text-slate-600 text-sm mt-2">Hydration made simple: tap 250 ml each time and watch your day fill up.</p>
+          <div class="mt-4 flex gap-2">
+            <a href="#" class="text-sm px-3 py-2 rounded-lg bg-slate-900 text px-3 py-2 rounded-lg border border!-- Coming Soon -->
+        <article class="rounded-3xl p-6 border border-slate-200 border-dashed bg-white/60 opacity-80">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center mb-5">
+            <span class="text-2xl">✨</span>
+          </div>
+          <h3 class="title-font text-xl font-semibold text-slate-700">Coming Soon…</h3>
+          <p class="text-slate-500 text-sm mt-2">More tiny, useful wrist‑first tools.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section id="screenshots" class="py-24 px-6 bg-white/60">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="title-font text-4xl md:text-5xl font-bold text-center mb-4">Screenshots</h2>
+      <p class="text-slate-500 text-center mb-12 text-lg">Placeholders — swap with your real Watch screenshots anytime.</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="aspect-[9/16] rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-300 bg-slate-100">
+          <span class="text-slate-400 text-sm">Screenshot 1</span>
+        </div>
+        <div class="aspect-[9/16] rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-300 bg-slate-100">
+          <span class="text-slate-400 text-sm">Screenshot 2</span>
+        </div>
+        <div class="aspect-[9/16] rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-300 bg-slate-100">
+          <span class="text-slate-400 text-sm">Screenshot 3</span>
+        </div>
+        <div class="aspect-[9/16] rounded-2xl flex items-center justify-center border-2 border-dashed border-slate-300 bg-slate-100">
+          <span class="text-slate-400 text-sm">Screenshot 4</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section id="blog" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="title-font text-4xl md:text-5xl font-bold text-center mb-4">Blog</h2>
+      <p class="text-slate-500 text-center mb-12">Short reads about tiny tools and better days.</p>
+
+      <!-- Post 1: Social Battery -->
+      <article id="post-social-battery" class="mb-16 rounded-3xl border border-slate-200 bg-white/80 backdrop-blur p-8">
+        <header class="mb-4">
+          <h3 class="title-font text-2xl md:text-3xl font-semibold">Why the Social Battery app is more useful than you think</h3>
+          <p class="text-slate-500 text-sm mt-1">Posted • 2026‑03‑05</p>
+        </header>
+        <div class="prose prose-slate max-w-none">
+          <p><strong>Modern days drain more than steps and calories — they drain attention and social energy.</strong> The Social Battery app gives you a fast way to notice that in real time. One tap to <em>drain</em> after a heavy interaction, one tap to <em>recharge</em> after a quiet break. That’s it.</p>
+          <p>Why it’s handy: you make smarter decisions. If your battery reads low, it’s a clear signal to decline the extra meeting or skip the after‑work plan. If it’s high, go for it. Over time, you’ll see patterns — what drains you, what restores you — and you can plan your day with more balance and less guesswork.</p>
+          <p><strong>It works because it’s wrist‑first.</strong> No typing, no menus. A glanceable ring/percentage and a single tap keep the habit alive. Tiny app, big clarity.</p>
+        </div>
+      </article>
+
+      <!-- Post 2: Water Tap (Watch2O) -->
+      <article id="post-watch2o" class="mb-4 rounded-3xl border border-slate-200 bg-white/80 backdrop-blur p-8">
+        <header class="mb-4">
+          <h3 class="title-font text-2xl md:text-3xl font-semibold">Watch2O (Water Tap): why 250 ml taps and complications matter</h3>
+          <p class="text-slate-500 text-sm mt-1">Posted • 2026‑03‑05</p>
+        </header>
+        <div class="prose prose-slate max-w-none">
+          <p><strong>Hydration is a daily habit, not a once‑a‑day chore.</strong> Watch2O keeps it simple: every time you drink, you tap <em>250 ml</em>. Those tiny wins add up across the day without breaking your flow.</p>
+          <p><strong>Why 250 ml?</strong> It’s a realistic default for most sips and small glasses. You don’t need to measure perfectly; consistency beats precision for everyday hydration. Four taps is roughly a liter — easy math, easy routine.</p>
+          <p><strong>Complications make it visible everywhere.</strong> Add the Watch2O complication to your favorite watch face and see progress at a glance — as a ring, percentage, or small number. Visibility drives action: when you see it, you sip. No need to open the app; the wrist reminds you.</p>
+          <p>Result: a frictionless hydration habit that actually sticks. Open, tap, done — and your day gets a little better.</p>
+        </div>
+      </article>
+
+      <!-- Blog list footer -->
+      <div class="text-center">
+        #apps
+          Back to Apps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="py-12 px-6 border-t border-slate-200 bg-white/70">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 items-start">
+      <div>
+        <div class="title-font text-2xl font-bold gradient-text">NANOHABIT</div>
+        <p class="text-slate-600 mt-2 text-sm">Minimal, wrist‑first micro‑apps for real life. Built by Atiq Bawary.</p>
+      </div>
+      <div>
+        <h4 class="title-font font-semibold mb-2">Links</h4>
+        <ul class="text-sm text-slate-700 space-y-1">
+          <li>#appsApps</a></li>
+          <li>#screenshotsScreenshots</a></li>
+          <li>#blogBlog</a></li>
+          <li>https://github.com/nanohabitGitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="title-font font-semibold mb-2">Contact</h4>
+        <p class="text-sm text-slate-700">Email: mailto:hello@nanohabit.devhello@nanohabit.dev</a></p>
+        <p class="text-xs text-slate-500 mt-2">© 2026 Nanohabit</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Simple JSON-LD for basic SEO (optional) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Nanohabit",
+    "url": "https://nanohabit.github.io",
+    "description": "Tiny Apple Watch apps that improve your day.",
+    "sameAs": ["https://github.com/nanohabit"],
+    "brand": "Nanohabit"
+  }
+  </script>
 </body>
 </html>
