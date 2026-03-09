@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Nanohabit · Apple Watch Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Nanohabit builds focused Apple Watch apps for wellness, hydration and energy awareness. WatcH20 and BioBattery are designed for Apple Watch, fast and privacy-friendly.">
+  <meta name="description" content="Nanohabit builds focused Apple Watch apps for wellness, simple work tracking, and energy awareness. WorkTap, WatcH20, and BioBattery are designed for Apple Watch.">
 
   <style>
     /* Base */
@@ -51,17 +51,6 @@
     h3 { margin:8px 0; }
 
     /* UI */
-    .btn {
-      display:inline-block;
-      padding:12px 18px;
-      margin:12px 12px 12px 0;
-      background:#ffffff;
-      border-radius:12px;
-      border:1px solid rgba(0,0,0,0.12);
-      color:#1d1d1f;
-      box-shadow:0 3px 10px rgba(0,0,0,0.08);
-      text-decoration:none;
-    }
     .card {
       background:#ffffff;
       padding:24px;
@@ -94,7 +83,7 @@
       border:1px solid rgba(0,0,0,0.12);
     }
 
-    /* Collapsible (details/summary) */
+    /* Collapsible */
     details { 
       margin-top: 16px; 
       background:#ffffff; 
@@ -107,17 +96,15 @@
       cursor:pointer;
       font-size:1.1rem;
       font-weight:600;
-      list-style:none;          /* Hide default marker in some browsers */
       outline:none;
+      list-style: none;
     }
-    /* Custom marker */
-    summary::marker { display:none; }
+    summary::-webkit-details-marker { display:none; }
     summary::before {
       content:"▸";
       display:inline-block;
       margin-right:8px;
       transition: transform 0.2s ease;
-      color:#1d1d1f;
     }
     details[open] summary::before { transform: rotate(90deg); }
     details > .content { margin-top:12px; padding-top:8px; border-top:1px solid rgba(0,0,0,0.06); }
@@ -131,7 +118,6 @@
       margin-top:48px;
     }
 
-    /* Responsive tweaks */
     @media (max-width:600px) {
       h1 { font-size:34px; }
       .watch-icon { width:100px; height:100px; font-size:14px; }
@@ -144,7 +130,7 @@
 <header>
   <div style="font-weight:600; font-size:18px;">Nanohabit</div>
   <nav>
-    Contact</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
@@ -154,15 +140,59 @@
 
   <p>
     Nanohabit builds focused Apple Watch apps that respect your time and your data.
+    WorkTap helps you complete your work hours without complexity.
     WatcH20 helps you track daily water intake.
-    BioBattery shows your social energy level so you can decide on evening plans.
+    BioBattery shows your social energy level.
   </p>
 </section>
 
 <section id="apps" class="wrap">
   <h2>Apps</h2>
 
-  <!-- WatcH20 Card -->
+  <article class="card" id="worktap">
+    <div class="watch-icon" style="background: linear-gradient(135deg, #FFD700, #00CED1);">WorkTap</div>
+    <span class="tag">Productivity</span>
+    <h3>WorkTap</h3>
+    <p>
+      Complete your work hours without the complexity. A high-fidelity timer designed to help you track your shift with a single tap.
+    </p>
+    <ul>
+      <li>Start and stop work instantly</li>
+      <li>Simple progress ring for daily hours</li>
+      <li>Automatic break deduction logic</li>
+      <li>No accounts or settings to manage</li>
+    </ul>
+  </article>
+
+  <details>
+    <summary>Why I Built WorkTap</summary>
+    <div class="content">
+      <p>
+        I noticed that most work-tracking apps were designed for project managers, not for the person doing the work. They ask for project codes, client names, and task descriptions.
+      </p>
+      
+      <h3>Just Log the Hours</h3>
+      <p>
+        I built <strong>WorkTap</strong> because I wanted a tool that answered one simple question: "How much of my shift is left?" 
+      </p>
+      <p>
+        It’s not about optimizing every second or categorizing tasks. It's about getting through your work hours and knowing exactly when you are done. No friction, no complexity—just a button and a progress ring.
+      </p>
+
+      <h3>Built for the Wrist</h3>
+      <p>
+        The Apple Watch is the perfect place for this. You shouldn't have to pull out a phone to log a break. By using haptic feedback and glanceable complications, WorkTap stays out of your way until you need it.
+      </p>
+
+      <h3>Privacy & Simplicity</h3>
+      <p>
+        Like all Nanohabit apps, WorkTap is private. Your hours are your business. There are no servers, no tracking, and no cloud sync. Everything is stored locally on your device.
+      </p>
+    </div>
+  </details>
+
+  <p></p>
+
   <article class="card" id="WatcH20">
     <div class="watch-icon">WatcH20</div>
     <span class="tag">Health &amp; Fitness</span>
@@ -179,79 +209,22 @@
     </ul>
   </article>
 
-  <!-- WatcH20 Blog (collapsible) -->
   <details>
     <summary>Why I Built WatcH20</summary>
     <div class="content">
       <p>
         Staying hydrated sounds simple, but building a consistent water habit is surprisingly difficult.
-        I tried many water-tracking apps on the App Store, and every time I stopped using them after a few days—not because I forgot, but because the apps were too complex, too demanding, or too dependent on the iPhone.
+        I tried many water-tracking apps, but they were often too complex or too dependent on the iPhone.
       </p>
-
       <h3>Simple by Design</h3>
       <p>
-        Many hydration apps require full setups, accounts, cloud syncing, notifications, badges, and dashboards.
-        WatcH20 was created to be the opposite: a minimal tool that does one thing extremely well.
-        Fast, one-tap water logging directly on your Apple Watch.
-        No friction, no clutter, no learning curve.
-      </p>
-      <p>
-        A micro-habit like drinking water should feel effortless.
-        With WatcH20, logging water takes one second—or less.
-      </p>
-
-      <h3>Private by Default</h3>
-      <p>
-        Modern apps often collect more data than necessary.
-        WatcH20 collects nothing. It stores nothing.
-        If you enable HealthKit, the app writes water intake directly to Apple Health, and nowhere else.
-      </p>
-      <p>
-        No servers. No analytics. No accounts.
-        Just your hydration data, on your device.
-      </p>
-
-      <h3>Fast Because It Lives on Your Wrist</h3>
-      <p>
-        Most water apps are built phone-first. WatcH20 is built Watch-first.
-        It opens instantly, logs instantly, and stays out of your way.
-        Complications let you see daily progress without opening the app.
-        Everything is optimized for speed and simplicity.
-      </p>
-
-      <h3>Compared to Typical Water Apps</h3>
-      <ul>
-        <li>WatcH20 requires zero setup—most apps require several minutes.</li>
-        <li>WatcH20 runs fully on Apple Watch—many apps depend heavily on the phone.</li>
-        <li>WatcH20 never collects data—others rely on cloud sync and analytics.</li>
-        <li>WatcH20 focuses on one-tap logging—others add dashboards and complex UI.</li>
-        <li>WatcH20 is distraction-free—others push notifications aggressively.</li>
-      </ul>
-
-      <h3>The Philosophy Behind It</h3>
-      <p>
-        Habit science shows that the easier a habit is, the more likely you repeat it.
-        If tracking water requires swiping, typing, or unlocking a phone, the habit breaks.
-        But if it takes one tap, the habit survives.
-      </p>
-      <p>
-        That’s the philosophy behind Nanohabit:
-        <strong>Small apps for small habits that make a meaningful difference.</strong>
-      </p>
-
-      <h3>Conclusion</h3>
-      <p>
-        WatcH20 doesn’t try to change your entire lifestyle.
-        It helps you stay hydrated by doing exactly what you need—no more, no less.
-      </p>
-      <p>
-        Simple. Private. Fast. That’s the heart of Nanohabit.
+        WatcH20 was created to be a minimal tool that does one thing extremely well: fast, one-tap water logging directly on your Apple Watch.
       </p>
     </div>
   </details>
-<p></p>
+
   <p></p>
-  <!-- BioBattery Card -->
+
   <article class="card" id="biobattery">
     <div class="watch-icon">BioBattery</div>
     <span class="tag">Health &amp; Fitness</span>
@@ -263,87 +236,19 @@
     <ul>
       <li>Clear energy indicator</li>
       <li>Designed for Apple Watch</li>
-      <li>No HealthKit required</li>
       <li>Private and lightweight</li>
     </ul>
   </article>
 
-  <!-- BioBattery Blog (collapsible) -->
   <details>
     <summary>Why I Built BioBattery</summary>
     <div class="content">
       <p>
-        We track everything today — heart rate, steps, sleep, calories, and even stress levels.
-        Yet none of these apps answer one simple everyday question:
-      </p>
-      <p><strong>"Do I actually have the energy for social plans today?"</strong></p>
-
-      <p>
-        I needed something small, honest, and practical. Not a fitness dashboard.
-        Not a complex readiness score. Just a quick way to understand my own social energy level.
+        We track everything today, yet none of the apps answer one simple question: <strong>"Do I actually have the energy for social plans today?"</strong>
       </p>
       <p>
-        That’s why I built <strong>BioBattery</strong>: a tiny, lightweight energy indicator that lives on your Apple Watch and helps you decide whether you feel ready for plans — or need time to recharge.
+        I built <strong>BioBattery</strong> as a tiny, lightweight energy indicator that trusts your intuition rather than just algorithms.
       </p>
-
-      <h3>Simple by Design</h3>
-      <p>
-        Many “energy tracking” apps try to interpret your life through data: HRV, sleep cycles, heart rate, step counts, and algorithms.
-        But your body isn’t always that predictable. Sometimes you’re tired even if your metrics look perfect.
-        Sometimes you feel great even after poor sleep.
-      </p>
-      <p>
-        BioBattery takes a different approach:
-        <strong>You set your energy level manually — the app simply reflects it back to you.</strong>
-      </p>
-      <p>
-        No confusion, no misinterpretation, no guessing.
-        Just a simple tool that respects your own intuition.
-      </p>
-
-      <h3>Private by Default</h3>
-      <p>
-        Your energy level is personal. BioBattery keeps it that way.
-        The app uses <strong>no HealthKit</strong>, collects <strong>no data</strong>, and sends <strong>nothing to any server</strong>.
-        There are no accounts, no analytics, no syncing — just a local value stored on your Watch.
-      </p>
-      <p>What you feel stays yours.</p>
-
-      <h3>Fast and Tiny</h3>
-      <p>BioBattery is designed from the ground up to run instantly on Apple Watch.</p>
-      <ul>
-        <li>Opens immediately</li>
-        <li>Adjust your energy with a simple tap or swipe</li>
-        <li>Clear color indicator shows your current level</li>
-        <li>Complication support for “glanceable” energy</li>
-      </ul>
-      <p>No unnecessary screens. No waiting. Just a tiny tool that slips into your day.</p>
-
-      <h3>Compared to Typical “Energy Apps”</h3>
-      <ul>
-        <li>Most apps calculate energy from HRV and sleep — BioBattery trusts <strong>you</strong> instead.</li>
-        <li>Most apps have graphs and dashboards — BioBattery stays visual and simple.</li>
-        <li>Most apps require HealthKit permissions — BioBattery requires nothing.</li>
-        <li>Most apps estimate “fitness readiness” — BioBattery helps with <strong>life readiness</strong>.</li>
-        <li>Most apps are large and complex — BioBattery is tiny and fast.</li>
-      </ul>
-
-      <h3>The Philosophy Behind It</h3>
-      <p>
-        Not every helpful app needs to be big. Not every insight needs a graph.
-        Sometimes the most meaningful tools are the smallest ones — because they become part of your routine.
-      </p>
-      <p>
-        This is the core of Nanohabit:
-        <strong>Small apps that help with small decisions that matter.</strong>
-      </p>
-
-      <h3>Conclusion</h3>
-      <p>
-        BioBattery doesn’t analyze you. It doesn’t judge you. It doesn’t try to predict your mood.
-        It simply gives you a tiny, honest reflection of your current energy level — so you can decide whether to rest, recharge, or engage.
-      </p>
-      <p>Fast. Simple. Private. That’s the Nanohabit way.</p>
     </div>
   </details>
 </section>
@@ -353,17 +258,19 @@
   <p><em>Last updated: March 2026</em></p>
 
   <p>
-    This privacy policy applies to both WatcH20 and BioBattery. Neither app
-    collects, stores, or transmits personal data.
+    This privacy policy applies to WorkTap, WatcH20, and BioBattery. None of these apps
+    collect, store, or transmit personal data to external servers.
   </p>
+
+  <h3>Work Data (WorkTap)</h3>
+  <p>WorkTap stores your sessions locally. No data is sent to analytics or third parties.</p>
 
   <h3>Health Data (WatcH20 only)</h3>
   <p>If enabled, WatcH20 writes water intake to Apple Health. Data stays on your device only.</p>
 
   <h3 id="contact">Contact</h3>
   <p>
-    For support or questions: https://bawary.github.io
-    <!-- mailto:support@nanohabit.appsupport@nanohabit.app</a> -->
+    For support or questions: <a href="https://bawary.github.io">https://bawary.github.io</a>
   </p>
 </section>
 
@@ -373,4 +280,3 @@
 
 </body>
 </html>
-``
