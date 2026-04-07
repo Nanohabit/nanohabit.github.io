@@ -4,287 +4,361 @@
   <meta charset="utf-8">
   <title>Nanohabit · Apple Watch Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Nanohabit creates private, intentional Apple Watch apps for focus, wellbeing, and reflection.">
+  <meta name="description" content="Nanohabit creates private, intentional Apple Watch apps for focus, wellbeing, and reflection. Built with intention.">
 
   <style>
     :root {
-      --glass: rgba(255,255,255,0.6);
-      --glass-border: rgba(255,255,255,0.35);
+      --glass: rgba(255, 255, 255, 0.7);
+      --glass-border: rgba(255, 255, 255, 0.4);
       --text-main: #0f172a;
       --text-muted: #475569;
+      --accent-gold: #d4af37;
+      --accent-blue: #007aff;
     }
 
     * { box-sizing: border-box; }
 
     body {
-      margin:0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
       color: var(--text-main);
-      background: #f8fafc;
+      background: #000;
+      overflow-x: hidden;
     }
 
-    a { text-decoration:none; color:inherit; }
+    a { text-decoration: none; color: inherit; }
 
     /* ================= HERO COVER ================= */
     .hero-cover {
-  height: 35vh;
-  background-image:
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.35),
-      rgba(0,0,0,0.15),
-      rgba(248,250,252,0.98)
-    ),
-    url('https://github.com/Nanohabit/nanohabit.github.io/blob/main/cover1.png?raw=true');
-
-  background-size: cover;
-  background-position: center 40%; /* ✅ key change */
-  background-attachment: fixed;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:24px;
-}
-
-    .hero-cover h1 {
-      font-size: clamp(3rem, 6vw, 4.5rem);
-      color: #fff;
-      letter-spacing:-0.02em;
-      text-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      margin-bottom: 12px;
+      height: 50vh;
+      background-image: 
+        linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)),
+        url('https://github.com/Nanohabit/nanohabit.github.io/blob/main/cover1.png?raw=true');
+      background-size: cover;
+      background-position: center 40%;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    .hero-cover p {
-      font-size:1.25rem;
-      color: rgba(255,255,255,0.9);
-      max-width:680px;
-      margin:0 auto;
-    }
-
-    /* iOS Safari fallback */
+    /* iOS Safari parallax fallback */
     @supports (-webkit-touch-callout: none) {
       .hero-cover { background-attachment: scroll; }
     }
 
     /* ================= CONTENT WINDOW ================= */
     .content-window {
-      background:
+      background: 
         radial-gradient(900px 600px at 10% -10%, #dbeafe, transparent),
         radial-gradient(800px 500px at 90% 0%, #fae8ff, transparent),
         #f8fafc;
-      position:relative;
-      z-index:1;
-      margin-top:-80px;
-      border-top-left-radius:40px;
-      border-top-right-radius:40px;
-      box-shadow: 0 -60px 120px rgba(0,0,0,0.25);
-      overflow:hidden;
+      position: relative;
+      z-index: 1;
+      margin-top: -60px;
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+      box-shadow: 0 -40px 100px rgba(0,0,0,0.3);
+      padding-bottom: 50px;
     }
 
     /* ================= HEADER ================= */
     header {
-      padding:24px;
-      text-align:center;
-      font-weight:600;
-      font-size:18px;
+      padding: 80px 24px 40px;
+      text-align: center;
     }
 
-    /* ================= LAYOUT ================= */
+    header .brand {
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ================= APP GRID & CARDS ================= */
     .wrap {
-      max-width:1100px;
-      margin:0 auto;
-      padding:64px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px;
     }
 
-    h2 {
-      text-align:center;
-      font-size:2.5rem;
-      letter-spacing:-0.02em;
-      margin-bottom:48px;
-    }
-
-    /* ================= APP GRID ================= */
     .grid {
-      display:grid;
+      display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap:32px;
+      gap: 32px;
+      margin-bottom: 60px;
     }
 
     .card {
       background: var(--glass);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border:1px solid var(--glass-border);
-      border-radius:28px;
-      padding:32px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
-      transition: transform 0.25s ease;
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid var(--glass-border);
+      border-radius: 35px;
+      padding: 40px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.1);
     }
 
     .icon {
-      width:96px;
-      height:96px;
-      border-radius:22px;
-      margin-bottom:16px;
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     .tag {
-      display:inline-block;
-      padding:6px 14px;
-      border-radius:999px;
-      font-size:12px;
-      background: rgba(0,0,0,0.06);
-      margin-bottom:10px;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.05);
+      margin-bottom: 15px;
     }
 
-    .card h3 {
-      font-size:1.8rem;
-      margin:10px 0;
-    }
+    .card h3 { font-size: 1.8rem; margin: 0 0 12px; }
+    .story { font-size: 1.05rem; line-height: 1.6; color: var(--text-muted); flex-grow: 1; }
 
-    .story {
-      font-size:1.05rem;
+    .personal-note {
+      background: rgba(0, 122, 255, 0.05);
+      padding: 15px;
+      border-radius: 15px;
+      font-style: italic;
       color: var(--text-muted);
-      margin-bottom:20px;
+      margin: 15px 0;
+      border-left: 3px solid var(--accent-blue);
+      font-size: 0.95rem;
     }
 
     .cta {
-      display:inline-block;
-      padding:12px 22px;
-      border-radius:999px;
-      background:#000;
-      color:#fff;
-      font-size:14px;
-      font-weight:500;
+      margin-top: 25px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: #000;
+      color: #fff;
+      font-weight: 600;
+      transition: background 0.2s;
+      border: none;
+      display: inline-block;
+    }
+    .cta:hover { background: #333; cursor: pointer; }
+
+    /* ================= PRIVACY SECTION ================= */
+    .privacy-box {
+      margin: 60px 0;
+      padding: 60px 24px;
+      background: #000;
+      color: #fff;
+      border-radius: 40px;
+      text-align: center;
     }
 
-    /* ================= PRIVACY ================= */
-    .privacy {
-      max-width:720px;
-      margin:0 auto;
-      text-align:center;
-      font-size:1.05rem;
-      color:var(--text-muted);
+    .privacy-box h2 { color: #fff; margin-bottom: 20px; font-size: 2.2rem; }
+    
+    .manifesto {
+      max-width: 650px;
+      margin: 40px auto 0;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #94a3b8;
+      border-top: 1px solid #333;
+      padding-top: 40px;
+    }
+
+    /* ================= CONTACT FORM ================= */
+    .contact-input {
+      width: 100%; 
+      padding: 15px; 
+      border-radius: 15px; 
+      border: 1px solid var(--glass-border); 
+      background: rgba(255,255,255,0.5); 
+      margin-bottom: 15px; 
+      font-family: inherit;
+      outline: none;
+    }
+
+    .math-box {
+      background: rgba(0,0,0,0.03); 
+      padding: 20px; 
+      border-radius: 20px; 
+      margin-bottom: 15px; 
+      border: 1px dashed #cbd5e1;
     }
 
     footer {
-      text-align:center;
-      padding:48px 24px;
-      font-size:14px;
-      color:#64748b;
+      text-align: center;
+      padding: 60px 24px;
+      font-size: 13px;
+      color: #94a3b8;
+      letter-spacing: 1px;
     }
   </style>
 </head>
 
 <body>
 
-<!-- FIXED HERO -->
-<section class="hero-cover">
-  <div>
-    <h1></h1>
-    <p>
-    </p>
-  </div>
-</section>
+<section class="hero-cover"></section>
 
-<!-- CONTENT -->
 <div class="content-window">
-
-  <header>Nanohabit
-  <h1>Simple, private, and fast.</h1>
+  <header>
+    <span class="brand">Nanohabit</span>
+    <h1>Your life, off the grid.</h1>
     <p>
-      Quiet Apple Watch apps that support focus,
-      wellbeing, and reflection — without noise, without iPhone.
-    </p></header>
+      Simple, private Apple Watch apps built for focus and wellbeing. 
+      No tracking, no noise, no iPhone required.
+    </p>
+  </header>
 
   <section class="wrap">
-    <h2>The Apps</h2>
-
     <div class="grid">
 
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/ce/7a/2dce7a5c-df8a-b23d-56be-da242fb718d0/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Productivity</span>
         <h3>WorkTap</h3>
-        <p class="story">
-          I built WorkTap because work shouldn’t feel heavy.
-          One tap to begin. One tap to end.
-          The watch handles the rest.
-        </p>
-        <a class="cta" href="https://apps.apple.com/us/app/worktap/id6760279260" target="_blank">
-          Download
-        </a>
+        <p class="story">Work shouldn’t feel heavy. One tap to begin, one tap to end. The watch handles the tracking so your mind doesn't have to.</p>
+        <div class="personal-note">"I built this because modern trackers are too loud. I just wanted to know: Am I working now, or am I not?"</div>
+        <a class="cta" href="https://apps.apple.com/us/app/worktap/id6760279260" target="_blank">Get WorkTap</a>
       </div>
 
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c6/27/6a/c6276a4d-dda6-64a4-af8a-dde0dfb068da/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Health</span>
         <h3>WatcH2O</h3>
-        <p class="story">
-          Hydration isn’t a goal — it’s a habit.
-          WatcH2O exists for the moments you forget.
-          A glance. A tap. Balance restored.
-        </p>
-        <a class="cta" href="https://apps.apple.com/us/app/watch2o/id6759989628" target="_blank">
-          Download
-        </a>
+        <p class="story">Hydration is a habit, not a chore. WatcH2O exists for the micro-moments you forget. A glance, a tap, balance restored.</p>
+        <div class="personal-note">"Most apps nag you. WatcH2O is designed to be a quiet companion. It suggests rather than screams."</div>
+        <a class="cta" href="https://apps.apple.com/us/app/watch2o/id6759989628" target="_blank">Get WatcH2O</a>
       </div>
 
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/0f/ec/1f0fec4f-bdad-384f-8045-41c1d9cfcce0/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Wellbeing</span>
         <h3>BioBattery</h3>
-        <p class="story">
-          Some days are for people.
-          Some days are for peace.
-          BioBattery helps you sense the difference.
-        </p>
-        <a class="cta" href="https://apps.apple.com/us/app/biobattery/id6760153002" target="_blank">
-          Download
-        </a>
+        <p class="story">Manage your energy, not just your time. BioBattery helps you notice when it's time to engage and when it's time for peace.</p>
+        <div class="personal-note">"We track our phone's battery more than our own. BioBattery changes that focus."</div>
+        <a class="cta" href="https://apps.apple.com/us/app/biobattery/id6760153002" target="_blank">Get BioBattery</a>
       </div>
 
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/3d/7a/d73d7ae5-36e9-5c43-57fa-ac8a7c7d3aec/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Spiritual</span>
         <h3>NUR Time</h3>
-        <p class="story">
-          NUR brings remembrance without interruption.
-          Verses arrive gently —
-          never demanding attention.
-        </p>
-        <a class="cta" href="https://apps.apple.com/us/app/nur-time/id6761441301" target="_blank">
-          Download
-        </a>
+        <p class="story">Remembrance without interruption. Verses arrive gently on your wrist—never demanding attention, always inviting reflection.</p>
+        <div class="personal-note">"Built for reflection without the noise of a typical notification-heavy world."</div>
+        <a class="cta" href="https://apps.apple.com/us/app/nur-time/id6761441301" target="_blank">Get NUR Time</a>
       </div>
 
     </div>
-  </section>
 
-  <section class="wrap privacy">
-    <h2>Privacy by Design</h2>
-    <p>
-      Nanohabit apps do not track you.
-      They do not profile you.
-      They do not send your data anywhere.
-    </p>
-    <p>
-      Everything stays on your watch — quietly.
-    </p>
+    <div class="privacy-box">
+      <h2>Privacy by Design</h2>
+      <p style="color: #94a3b8; max-width: 550px; margin: 0 auto; line-height: 1.6;">
+        Nanohabit apps do not track you. They do not profile you. They do not send your data anywhere. Everything stays on your watch — quietly.
+      </p>
+      <div class="manifesto">
+        "I don't believe your watch should be another source of noise. I build these apps with a single intention: to create nano-interventions that lead to macro-change."
+      </div>
+    </div>
+
+    <div class="card" style="max-width: 600px; margin: 80px auto 0; align-items: center; text-align: center;">
+      <span class="tag">Developer</span>
+      <h2 style="margin: 10px 0;">A. Bawary</h2>
+      <p class="story">Have a question or a feature request? Let's connect directly.</p>
+
+      <form id="contactForm" style="width: 100%; margin-top: 20px;">
+        <input type="text" id="userName" placeholder="Your Name" required class="contact-input">
+        <textarea id="userMessage" placeholder="How can I help?" required rows="4" class="contact-input" style="resize:none;"></textarea>
+
+        <div class="math-box">
+          <p style="font-size: 14px; margin-bottom: 10px; font-weight: 600;">Human Verification</p>
+          <label id="mathQuestion" style="font-size: 18px; font-weight: 700;"></label>
+          <input type="number" id="mathAnswer" placeholder="?" 
+                 style="width: 60px; padding: 10px; border-radius: 10px; border: 1px solid #000; text-align: center; margin-left: 10px;">
+        </div>
+
+        <button type="submit" id="sendBtn" class="cta" style="width: 100%; cursor: not-allowed; opacity: 0.5;" disabled>
+          Unlock Form to Send
+        </button>
+      </form>
+      
+      <p id="successMsg" style="display:none; color: var(--accent-gold); font-weight: 600; margin-top: 20px;">
+        Opening your email client...
+      </p>
+    </div>
+
   </section>
 
   <footer>
     © 2026 Nanohabit · Built with intention
   </footer>
-
 </div>
+
+<script>
+  // Math Puzzle Logic
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 5) + 1;
+  const correctAnswer = num1 + num2;
+  
+  document.getElementById('mathQuestion').innerText = `${num1} + ${num2} = `;
+
+  const mathInput = document.getElementById('mathAnswer');
+  const sendBtn = document.getElementById('sendBtn');
+  const contactForm = document.getElementById('contactForm');
+
+  mathInput.addEventListener('input', () => {
+    if (parseInt(mathInput.value) === correctAnswer) {
+      sendBtn.disabled = false;
+      sendBtn.style.opacity = "1";
+      sendBtn.style.cursor = "pointer";
+      sendBtn.innerText = "Send Message";
+    } else {
+      sendBtn.disabled = true;
+      sendBtn.style.opacity = "0.5";
+      sendBtn.innerText = "Unlock Form to Send";
+    }
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = "exentiq";
+    const domain = "gmail.com";
+    const subject = `Nanohabit Inquiry from ${document.getElementById('userName').value}`;
+    const body = document.getElementById('userMessage').value;
+    
+    document.getElementById('successMsg').style.display = "block";
+    window.location.href = `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
 
 </body>
 </html>
