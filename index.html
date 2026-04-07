@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <title>Nanohabit · Apple Watch Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Nanohabit builds focused Apple Watch apps for wellness, simple work tracking, and energy awareness. WorkTap, WatcH20, BioBattery, and NUR are designed for Apple Watch.">
+  <meta name="description" content="Nanohabit builds focused Apple Watch apps that respect your time and privacy. WorkTap, WatcH2O, BioBattery, and NUR Time.">
 
   <style>
-    /* Base */
+    /* Reset / Base */
     * { box-sizing: border-box; }
     body {
       margin:0;
@@ -30,9 +30,9 @@
       justify-content:space-between;
       align-items:center;
       border-bottom:1px solid rgba(0,0,0,0.1);
-      z-index: 10;
+      z-index:10;
     }
-    header nav a { margin-left:12px; }
+    header nav a { margin-left:16px; }
 
     /* Layout */
     .wrap {
@@ -41,86 +41,104 @@
       padding:24px;
     }
 
-    /* Type */
+    /* Typography */
     h1 {
       font-size:42px;
       margin-top:32px;
-      color:#1d1d1f;
+      margin-bottom:12px;
     }
     h2 { margin-top:48px; }
-    h3 { margin:8px 0; }
+    h3 { margin:12px 0 8px; }
 
-    /* UI */
+    /* Cards */
     .card {
-      background:#ffffff;
+      background:#fff;
       padding:24px;
       border-radius:16px;
       border:1px solid rgba(0,0,0,0.12);
       margin-bottom:28px;
       box-shadow:0 4px 12px rgba(0,0,0,0.06);
     }
+
     .tag {
       display:inline-block;
       padding:4px 10px;
-      border-radius:50px;
+      border-radius:999px;
       background:#f0f0f0;
       font-size:12px;
-      margin-bottom:10px;
+      margin-bottom:8px;
       border:1px solid rgba(0,0,0,0.1);
       color:#333;
     }
-    .watch-icon {
+
+    /* App icon */
+    .app-icon {
       width:120px;
       height:120px;
       border-radius:24px;
-      background:#fafafa;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#1d1d1f;
-      font-weight:600;
-      margin-bottom:12px;
       border:1px solid rgba(0,0,0,0.12);
+      object-fit:cover;
+      background:#fff;
+      margin-bottom:12px;
+    }
+
+    /* CTA */
+    .app-cta {
+      display:inline-block;
+      margin-top:16px;
+      padding:10px 18px;
+      background:#000;
+      color:#fff;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:500;
+      transition:transform 0.15s ease, opacity 0.15s ease;
+    }
+    .app-cta:hover {
+      transform:translateY(-1px);
+      opacity:0.9;
+      text-decoration:none;
+    }
+    .app-cta.secondary {
+      background:#1d1d1f;
     }
 
     /* Collapsible */
-    details { 
-      margin-top: 16px; 
-      background:#ffffff; 
-      border-radius:16px; 
+    details {
+      margin-top:16px;
+      background:#fff;
+      border-radius:16px;
       border:1px solid rgba(0,0,0,0.12);
       box-shadow:0 4px 12px rgba(0,0,0,0.06);
       padding:12px 16px;
     }
     summary {
       cursor:pointer;
-      font-size:1.1rem;
+      font-size:1.05rem;
       font-weight:600;
-      outline:none;
-      list-style: none;
+      list-style:none;
     }
     summary::-webkit-details-marker { display:none; }
     summary::before {
       content:"▸";
       display:inline-block;
       margin-right:8px;
-      transition: transform 0.2s ease;
+      transition:transform 0.2s ease;
     }
-    details[open] summary::before { transform: rotate(90deg); }
-    details > .content { margin-top:12px; padding-top:8px; border-top:1px solid rgba(0,0,0,0.06); }
+    details[open] summary::before { transform:rotate(90deg); }
 
     footer {
       padding:32px;
       text-align:center;
       color:#555;
       border-top:1px solid rgba(0,0,0,0.1);
-      background:#ffffff;
+      background:#fff;
       margin-top:48px;
     }
 
     @media (max-width:600px) {
       h1 { font-size:34px; }
-      .watch-icon { width:100px; height:100px; font-size:14px; }
+      .app-icon { width:100px; height:100px; }
     }
   </style>
 </head>
@@ -130,6 +148,8 @@
 <header>
   <div style="font-weight:600; font-size:18px;">Nanohabit</div>
   <nav>
+    <a href="#apps">Apps</a>
+    <a href="#privacy">Privacy</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -137,130 +157,106 @@
 <section class="wrap">
   <small>Apple Watch Apps</small>
   <h1>Simple, private, and fast.</h1>
-
   <p>
-    Nanohabit builds focused Apple Watch apps that respect your time and your data.
-    WorkTap helps you complete your work hours without complexity.
-    WatcH2O helps you track daily water intake.
-    BioBattery shows your social energy level.
-    NUR delivers timed Quranic verses throughout your day.
+    Nanohabit builds focused Apple Watch apps designed for clarity, calm,
+    and intentional daily use — without accounts, analytics, or distractions.
   </p>
 </section>
 
 <section id="apps" class="wrap">
   <h2>Apps</h2>
 
-  <!-- WorkTap (unchanged) -->
-  <article class="card" id="worktap">
-    <div class="watch-icon" style="background: linear-gradient(135deg, #FFD700, #00CED1);">WorkTap</div>
+  <!-- WorkTap -->
+  <article class="card">
+    <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/ce/7a/2dce7a5c-df8a-b23d-56be-da242fb718d0/Placeholder.mill/200x200bb-75.webp" alt="WorkTap App Icon">
     <span class="tag">Productivity</span>
     <h3>WorkTap</h3>
-    <p>
-      Complete your work hours without the complexity. A high-fidelity timer designed to help you track your shift with a single tap.
-    </p>
+    <p>Track your work hours with a single tap — no setup, no clutter.</p>
     <ul>
-      <li>Start and stop work instantly</li>
-      <li>Simple progress ring for daily hours</li>
-      <li>Automatic break deduction logic</li>
-      <li>No accounts or settings to manage</li>
+      <li>Instant start & stop</li>
+      <li>Daily progress ring</li>
+      <li>Automatic break logic</li>
+      <li>All data stays on your watch</li>
     </ul>
+    <a class="app-cta" href="https://apps.apple.com/us/app/worktap/id6760279260" target="_blank">
+      Download on the App Store
+    </a>
   </article>
 
-  <!-- (unchanged collapsible WorkTap info here...) -->
-
-  <!-- WatcH2O (unchanged) -->
-  <article class="card" id="WatcH20">
-    <div class="watch-icon">WatcH2O</div>
-    <span class="tag">Health &amp; Fitness</span>
+  <!-- WatcH2O -->
+  <article class="card">
+    <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c6/27/6a/c6276a4d-dda6-64a4-af8a-dde0dfb068da/Placeholder.mill/200x200bb-75.webp" alt="WatcH2O App Icon">
+    <span class="tag">Health</span>
     <h3>WatcH2O</h3>
-    <p>
-      Fast, simple water intake tracking for Apple Watch.
-      Optional HealthKit write for water data.
-      No external servers, no analytics.
-    </p>
+    <p>Log your water intake instantly — designed for speed and simplicity.</p>
     <ul>
-      <li>One-tap water logging</li>
-      <li>Complications for quick access</li>
-      <li>Data stays on your device</li>
+      <li>One‑tap logging</li>
+      <li>Watch complications</li>
+      <li>Optional Apple Health sync</li>
     </ul>
+    <a class="app-cta" href="https://apps.apple.com/us/app/watch2o/id6759989628" target="_blank">
+      Download on the App Store
+    </a>
   </article>
 
-  <!-- (unchanged collapsible WatcH2O info...) -->
-
-  <!-- BioBattery (unchanged) -->
-  <article class="card" id="biobattery">
-    <div class="watch-icon">BioBattery</div>
-    <span class="tag">Health &amp; Fitness</span>
+  <!-- BioBattery -->
+  <article class="card">
+    <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/0f/ec/1f0fec4f-bdad-384f-8045-41c1d9cfcce0/Placeholder.mill/200x200bb-75.webp" alt="BioBattery App Icon">
+    <span class="tag">Wellbeing</span>
     <h3>BioBattery</h3>
-    <p>
-      BioBattery shows your current energy level so you can decide whether
-      you feel ready for social plans or need time to recharge.
-    </p>
+    <p>Understand your social energy and decide when to engage or recharge.</p>
     <ul>
       <li>Clear energy indicator</li>
-      <li>Designed for Apple Watch</li>
-      <li>Private and lightweight</li>
+      <li>Apple Watch only</li>
+      <li>No tracking or analytics</li>
     </ul>
+    <a class="app-cta" href="https://apps.apple.com/us/app/biobattery/id6760153002" target="_blank">
+      Download on the App Store
+    </a>
   </article>
 
-  <!-- (unchanged collapsible BioBattery info...) -->
-
-  <!-- 🔥 NEW: NUR APP CARD -->
-  <article class="card" id="nur">
-    <div class="watch-icon" style="background: linear-gradient(135deg, #111, #444); color:white;">NUR</div>
+  <!-- NUR Time -->
+  <article class="card">
+    <img class="app-icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/3d/7a/d73d7ae5-36e9-5c43-57fa-ac8a7c7d3aec/Placeholder.mill/200x200bb-75.webp" alt="NUR Time App Icon">
     <span class="tag">Spiritual</span>
-    <h3>NUR</h3>
+    <h3>NUR Time</h3>
     <p>
-      NUR displays Quranic verses on your Apple Watch every 3 hours, designed to bring light, reflection, and tranquility to your day.
+      Gentle Quranic verses delivered to your wrist —
+      moments of light, reflection, and calm throughout the day.
     </p>
     <ul>
-      <li>Verse notification every 3 hours</li>
-      <li>Minimal and distraction‑free</li>
-      <li>No accounts, no tracking</li>
-      <li>Everything stays on your device</li>
+      <li>Verse every 3 hours</li>
+      <li>No distractions or feeds</li>
+      <li>Everything stays on device</li>
     </ul>
+    <a class="app-cta secondary" href="https://apps.apple.com/us/app/nur-time/id6761441301" target="_blank">
+      Download NUR Time
+    </a>
   </article>
 
   <details>
     <summary>Why I Built NUR</summary>
-    <div class="content">
-      <p>
-        I wanted a silent spiritual companion on the wrist, without apps that distract or overwhelm.
-        NUR brings short moments of reflection throughout the day—without needing your phone.
-      </p>
-      <p>
-        No analytics, no online services, no identity. Just light.
-      </p>
-    </div>
+    <p>
+      I wanted a silent spiritual companion on the wrist — without noise,
+      feeds, or tracking. NUR brings brief moments of remembrance into the day,
+      without pulling you out of it.
+    </p>
+    <p>No accounts. No analytics. Just light.</p>
   </details>
-
 </section>
 
 <section id="privacy" class="wrap">
   <h2>Privacy Policy</h2>
   <p><em>Last updated: March 2026</em></p>
-
   <p>
-    This privacy policy applies to WorkTap, WatcH2O, BioBattery, and NUR.
-    None of these apps collect, store, or transmit personal data to external servers.
-  </p>
-
-  <h3>Work Data (WorkTap)</h3>
-  <p>WorkTap stores your sessions locally. No data is sent to analytics or third parties.</p>
-
-  <h3>Health Data (WatcH2O only)</h3>
-  <p>If enabled, WatcH20 writes water intake to Apple Health. Data stays on your device only.</p>
-
-  <h3>Spiritual Data (NUR)</h3>
-  <p>
-    NUR does not collect or store any personal information.  
-    Verses are displayed locally on your device.  
-    No data leaves your Apple Watch.
+    None of the Nanohabit apps collect, transmit, or sell personal data.
+    Everything stays on your device.
   </p>
 
   <h3 id="contact">Contact</h3>
   <p>
-    For support or questions: <a href="https://nanohabit.github.io">https://nanohabit.github.io</a>
+    For support or questions:<br>
+    <a href="https://nanohabit.github.io">https://nanohabit.github.io</a>
   </p>
 </section>
 
