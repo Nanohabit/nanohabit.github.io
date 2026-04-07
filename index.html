@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <title>Nanohabit · Apple Watch Apps</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Nanohabit creates deeply personal Apple Watch apps—private, intentional, and beautifully simple.">
+  <meta name="description" content="Nanohabit creates private, intentional Apple Watch apps for focus, wellbeing, and reflection.">
 
   <style>
     :root {
-      --glass-bg: rgba(255,255,255,0.55);
+      --glass: rgba(255,255,255,0.6);
       --glass-border: rgba(255,255,255,0.35);
-      --text-primary: #0f172a;
-      --text-secondary: #475569;
+      --text-main: #0f172a;
+      --text-muted: #475569;
     }
 
     * { box-sizing: border-box; }
@@ -20,59 +20,92 @@
       margin:0;
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text-primary);
-      background:
-        radial-gradient(1200px 800px at 10% -10%, #dbeafe, transparent),
-        radial-gradient(1000px 700px at 90% 10%, #fae8ff, transparent),
-        radial-gradient(800px 600px at 50% 90%, #ecfeff, transparent),
-        #f8fafc;
-      overflow-x:hidden;
+      color: var(--text-main);
+      background: #f8fafc;
     }
 
     a { text-decoration:none; color:inherit; }
 
-    /* ---------- HERO ---------- */
-    header {
-      padding:120px 24px 80px;
+    /* ================= HERO COVER ================= */
+    .hero-cover {
+      height: 100vh;
+      background-image:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.35),
+          rgba(0,0,0,0.15),
+          rgba(248,250,252,0.98)
+        ),
+        url('https://github.com/Nanohabit/nanohabit.github.io/blob/main/Shop%20Easy.png?raw=true');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
       text-align:center;
-      position:relative;
+      padding:24px;
     }
 
-    header h1 {
-      font-size: clamp(2.8rem, 6vw, 4.5rem);
-      font-weight:700;
-      margin-bottom:16px;
+    .hero-cover h1 {
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      color: #fff;
       letter-spacing:-0.02em;
+      text-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      margin-bottom: 12px;
     }
 
-    header p {
+    .hero-cover p {
       font-size:1.25rem;
-      color:var(--text-secondary);
-      max-width:650px;
-      margin:0 auto 40px;
-    }
-
-    .watch-hero {
-      width:260px;
+      color: rgba(255,255,255,0.9);
+      max-width:680px;
       margin:0 auto;
-      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.25));
     }
 
-    /* ---------- LAYOUT ---------- */
+    /* iOS Safari fallback */
+    @supports (-webkit-touch-callout: none) {
+      .hero-cover { background-attachment: scroll; }
+    }
+
+    /* ================= CONTENT WINDOW ================= */
+    .content-window {
+      background:
+        radial-gradient(900px 600px at 10% -10%, #dbeafe, transparent),
+        radial-gradient(800px 500px at 90% 0%, #fae8ff, transparent),
+        #f8fafc;
+      position:relative;
+      z-index:1;
+      margin-top:-80px;
+      border-top-left-radius:40px;
+      border-top-right-radius:40px;
+      box-shadow: 0 -60px 120px rgba(0,0,0,0.25);
+      overflow:hidden;
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      padding:24px;
+      text-align:center;
+      font-weight:600;
+      font-size:18px;
+    }
+
+    /* ================= LAYOUT ================= */
     .wrap {
       max-width:1100px;
       margin:0 auto;
       padding:64px 24px;
     }
 
-    section h2 {
+    h2 {
+      text-align:center;
       font-size:2.5rem;
       letter-spacing:-0.02em;
-      margin-bottom:40px;
-      text-align:center;
+      margin-bottom:48px;
     }
 
-    /* ---------- APP CARDS ---------- */
+    /* ================= APP GRID ================= */
     .grid {
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -80,15 +113,14 @@
     }
 
     .card {
-      background: var(--glass-bg);
+      background: var(--glass);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border:1px solid var(--glass-border);
       border-radius:28px;
       padding:32px;
-      box-shadow:
-        0 30px 80px rgba(0,0,0,0.10);
-      transition: transform 0.3s ease;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+      transition: transform 0.25s ease;
     }
 
     .card:hover {
@@ -104,22 +136,22 @@
 
     .tag {
       display:inline-block;
-      margin-bottom:12px;
       padding:6px 14px;
       border-radius:999px;
       font-size:12px;
-      background:rgba(0,0,0,0.05);
+      background: rgba(0,0,0,0.06);
+      margin-bottom:10px;
     }
 
     .card h3 {
       font-size:1.8rem;
-      margin:8px 0;
+      margin:10px 0;
     }
 
     .story {
       font-size:1.05rem;
-      color:var(--text-secondary);
-      margin-bottom:18px;
+      color: var(--text-muted);
+      margin-bottom:20px;
     }
 
     .cta {
@@ -128,17 +160,17 @@
       border-radius:999px;
       background:#000;
       color:#fff;
-      font-weight:500;
       font-size:14px;
+      font-weight:500;
     }
 
-    /* ---------- PRIVACY ---------- */
+    /* ================= PRIVACY ================= */
     .privacy {
       max-width:720px;
       margin:0 auto;
       text-align:center;
       font-size:1.05rem;
-      color:var(--text-secondary);
+      color:var(--text-muted);
     }
 
     footer {
@@ -152,104 +184,103 @@
 
 <body>
 
-<header>
-  <img class="watch-hero"
-       src="https://developer.apple.com/assets/elements/icons/apple-watch/apple-watch-128x128_2x.png"
-       alt="Apple Watch">
-  <h1>Small habits.<br>Deep impact.</h1>
-  <p>
-    Nanohabit apps live on your wrist—quietly supporting focus,
-    wellbeing, and meaning throughout your day.
-  </p>
-</header>
-
-<section class="wrap">
-  <h2>The Apps</h2>
-
-  <div class="grid">
-
-    <!-- WorkTap -->
-    <div class="card">
-      <img class="icon"
-           src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/ce/7a/2dce7a5c-df8a-b23d-56be-da242fb718d0/Placeholder.mill/200x200bb-75.webp">
-      <span class="tag">Productivity</span>
-      <h3>WorkTap</h3>
-      <p class="story">
-        I built WorkTap because work shouldn’t feel heavy.
-        One tap when you start. One tap when you stop.
-        The watch quietly keeps track—so your mind doesn’t have to.
-      </p>
-      <a class="cta"
-         href="https://apps.apple.com/us/app/worktap/id6760279260"
-         target="_blank">Download</a>
-    </div>
-
-    <!-- WatcH2O -->
-    <div class="card">
-      <img class="icon"
-           src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c6/27/6a/c6276a4d-dda6-64a4-af8a-dde0dfb068da/Placeholder.mill/200x200bb-75.webp">
-      <span class="tag">Health</span>
-      <h3>WatcH2O</h3>
-      <p class="story">
-        Hydration is a habit we intend to build—and forget to maintain.
-        WatcH2O exists for micro‑moments:
-        a glance, a tap, a better day.
-      </p>
-      <a class="cta"
-         href="https://apps.apple.com/us/app/watch2o/id6759989628"
-         target="_blank">Download</a>
-    </div>
-
-    <!-- BioBattery -->
-    <div class="card">
-      <img class="icon"
-           src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/0f/ec/1f0fec4f-bdad-384f-8045-41c1d9cfcce0/Placeholder.mill/200x200bb-75.webp">
-      <span class="tag">Wellbeing</span>
-      <h3>BioBattery</h3>
-      <p class="story">
-        Not every day needs more social energy.
-        BioBattery helps you notice when it’s time to engage—
-        and when it’s time to protect your calm.
-      </p>
-      <a class="cta"
-         href="https://apps.apple.com/us/app/biobattery/id6760153002"
-         target="_blank">Download</a>
-    </div>
-
-    <!-- NUR -->
-    <div class="card">
-      <img class="icon"
-           src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/3d/7a/d73d7ae5-36e9-5c43-57fa-ac8a7c7d3aec/Placeholder.mill/200x200bb-75.webp">
-      <span class="tag">Spiritual</span>
-      <h3>NUR Time</h3>
-      <p class="story">
-        NUR was created for remembrance without noise.
-        Verses arrive gently—never demanding attention,
-        always inviting reflection.
-      </p>
-      <a class="cta"
-         href="https://apps.apple.com/us/app/nur-time/id6761441301"
-         target="_blank">Download NUR</a>
-    </div>
-
+<!-- FIXED HERO -->
+<section class="hero-cover">
+  <div>
+    <h1>Technology with intention.</h1>
+    <p>
+      Quiet Apple Watch apps that support focus,
+      wellbeing, and reflection — without noise.
+    </p>
   </div>
 </section>
 
-<section class="wrap privacy">
-  <h2>Privacy by Design</h2>
-  <p>
-    Nanohabit apps do not track you.
-    They do not profile you.
-    They do not send your data anywhere.
-  </p>
-  <p>
-    Everything happens on your watch—quietly, respectfully.
-  </p>
-</section>
+<!-- CONTENT -->
+<div class="content-window">
 
-<footer>
-  © 2026 Nanohabit · Built with intention
-</footer>
+  <header>Nanohabit</header>
+
+  <section class="wrap">
+    <h2>The Apps</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/ce/7a/2dce7a5c-df8a-b23d-56be-da242fb718d0/Placeholder.mill/200x200bb-75.webp">
+        <span class="tag">Productivity</span>
+        <h3>WorkTap</h3>
+        <p class="story">
+          I built WorkTap because work shouldn’t feel heavy.
+          One tap to begin. One tap to end.
+          The watch handles the rest.
+        </p>
+        <a class="cta" href="https://apps.apple.com/us/app/worktap/id6760279260" target="_blank">
+          Download
+        </a>
+      </div>
+
+      <div class="card">
+        <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c6/27/6a/c6276a4d-dda6-64a4-af8a-dde0dfb068da/Placeholder.mill/200x200bb-75.webp">
+        <span class="tag">Health</span>
+        <h3>WatcH2O</h3>
+        <p class="story">
+          Hydration isn’t a goal — it’s a habit.
+          WatcH2O exists for the moments you forget.
+          A glance. A tap. Balance restored.
+        </p>
+        <a class="cta" href="https://apps.apple.com/us/app/watch2o/id6759989628" target="_blank">
+          Download
+        </a>
+      </div>
+
+      <div class="card">
+        <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/0f/ec/1f0fec4f-bdad-384f-8045-41c1d9cfcce0/Placeholder.mill/200x200bb-75.webp">
+        <span class="tag">Wellbeing</span>
+        <h3>BioBattery</h3>
+        <p class="story">
+          Some days are for people.
+          Some days are for peace.
+          BioBattery helps you sense the difference.
+        </p>
+        <a class="cta" href="https://apps.apple.com/us/app/biobattery/id6760153002" target="_blank">
+          Download
+        </a>
+      </div>
+
+      <div class="card">
+        <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/3d/7a/d73d7ae5-36e9-5c43-57fa-ac8a7c7d3aec/Placeholder.mill/200x200bb-75.webp">
+        <span class="tag">Spiritual</span>
+        <h3>NUR Time</h3>
+        <p class="story">
+          NUR brings remembrance without interruption.
+          Verses arrive gently —
+          never demanding attention.
+        </p>
+        <a class="cta" href="https://apps.apple.com/us/app/nur-time/id6761441301" target="_blank">
+          Download
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wrap privacy">
+    <h2>Privacy by Design</h2>
+    <p>
+      Nanohabit apps do not track you.
+      They do not profile you.
+      They do not send your data anywhere.
+    </p>
+    <p>
+      Everything stays on your watch — quietly.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Nanohabit · Built with intention
+  </footer>
+
+</div>
 
 </body>
 </html>
