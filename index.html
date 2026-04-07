@@ -28,25 +28,26 @@
 
     /* ================= HERO COVER ================= */
     .hero-cover {
-      height: 35vh;
-      background-image:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,0.35),
-          rgba(0,0,0,0.15),
-          rgba(248,250,252,0.98)
-        ),
-        url('https://github.com/Nanohabit/nanohabit.github.io/blob/main/cover.png?raw=true');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+  height: 35vh;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.15),
+      rgba(248,250,252,0.98)
+    ),
+    url('https://github.com/Nanohabit/nanohabit.github.io/blob/main/cover.png?raw=true');
 
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:24px;
-    }
+  background-size: cover;
+  background-position: center 40%; /* ✅ key change */
+  background-attachment: fixed;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px;
+}
 
     .hero-cover h1 {
       font-size: clamp(3rem, 6vw, 4.5rem);
