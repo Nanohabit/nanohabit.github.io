@@ -28,6 +28,7 @@
 
     a { text-decoration: none; color: inherit; }
 
+    /* ================= HERO COVER ================= */
     .hero-cover {
       height: 50vh;
       background-image: 
@@ -42,10 +43,12 @@
       text-align: center;
     }
 
+    /* iOS Safari parallax fallback */
     @supports (-webkit-touch-callout: none) {
       .hero-cover { background-attachment: scroll; }
     }
 
+    /* ================= CONTENT WINDOW ================= */
     .content-window {
       background: 
         radial-gradient(900px 600px at 10% -10%, #dbeafe, transparent),
@@ -60,6 +63,7 @@
       padding-bottom: 50px;
     }
 
+    /* ================= HEADER ================= */
     header {
       padding: 80px 24px 40px;
       text-align: center;
@@ -90,6 +94,7 @@
       line-height: 1.5;
     }
 
+    /* ================= APP GRID & CARDS ================= */
     .wrap {
       max-width: 1100px;
       margin: 0 auto;
@@ -165,34 +170,9 @@
       border: none;
       display: inline-block;
     }
-
     .cta:hover { background: #333; cursor: pointer; }
 
-    /* ✅ ADDITION 1: Featured game styling */
-    .card.game-feature {
-      grid-column: 1 / -1;
-      align-items: center;
-      text-align: center;
-      background:
-        radial-gradient(600px 300px at 50% 0%, rgba(0,122,255,0.08), transparent),
-        var(--glass);
-      border: 1px solid rgba(0,122,255,0.25);
-    }
-
-    .card.game-feature .icon {
-      width: 110px;
-      height: 110px;
-      border-radius: 26px;
-    }
-
-    .watch-only {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--accent-blue);
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
-    }
-
+    /* ================= PRIVACY SECTION ================= */
     .privacy-box {
       margin: 60px 0;
       padding: 60px 24px;
@@ -203,7 +183,7 @@
     }
 
     .privacy-box h2 { color: #fff; margin-bottom: 20px; font-size: 2.2rem; }
-
+    
     .manifesto {
       max-width: 650px;
       margin: 40px auto 0;
@@ -213,6 +193,26 @@
       color: #94a3b8;
       border-top: 1px solid #333;
       padding-top: 40px;
+    }
+
+    /* ================= CONTACT FORM ================= */
+    .contact-input {
+      width: 100%; 
+      padding: 15px; 
+      border-radius: 15px; 
+      border: 1px solid var(--glass-border); 
+      background: rgba(255,255,255,0.5); 
+      margin-bottom: 15px; 
+      font-family: inherit;
+      outline: none;
+    }
+
+    .math-box {
+      background: rgba(0,0,0,0.03); 
+      padding: 20px; 
+      border-radius: 20px; 
+      margin-bottom: 15px; 
+      border: 1px dashed #cbd5e1;
     }
 
     footer {
@@ -242,8 +242,7 @@
   <section class="wrap">
     <div class="grid">
 
-      <!-- ✅ ADDITION 2: Featured game (does NOT replace anything) -->
-      <div class="card game-feature">
+<div class="card game-feature">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/47/b5/55/47b555c0-1ef8-5c8d-2916-e98f9f13b033/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Game</span>
         <div class="watch-only">Apple Watch Only</div>
@@ -257,57 +256,123 @@
         </a>
       </div>
 
-      <!-- 🔒 EVERYTHING BELOW IS YOUR ORIGINAL CONTENT, UNCHANGED -->
-
-      <!-- WorkTap -->
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2d/ce/7a/2dce7a5c-df8a-b23d-56be-da242fb718d0/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Productivity</span>
         <h3>WorkTap</h3>
-        <p class="story">Work shouldn’t feel heavy...</p>
-        <div class="personal-note">"I built this because modern trackers are too loud."</div>
+        <p class="story">Work shouldn’t feel heavy. One tap to begin, one tap to end. The watch handles the tracking so your mind doesn't have to.</p>
+        <div class="personal-note">"I built this because modern trackers are too loud. I just wanted to know: Am I working now, or am I not?"</div>
         <a class="cta" href="https://apps.apple.com/us/app/worktap/id6760279260" target="_blank">Get WorkTap</a>
       </div>
 
-      <!-- WatcH2O -->
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c6/27/6a/c6276a4d-dda6-64a4-af8a-dde0dfb068da/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Health</span>
         <h3>WatcH2O</h3>
-        <p class="story">Hydration is a habit, not a chore...</p>
-        <div class="personal-note">"Most apps nag you."</div>
+        <p class="story">Hydration is a habit, not a chore. WatcH2O exists for the micro-moments you forget. A glance, a tap, balance restored.</p>
+        <div class="personal-note">"Most apps nag you. WatcH2O is designed to be a quiet companion. It suggests rather than screams."</div>
         <a class="cta" href="https://apps.apple.com/us/app/watch2o/id6759989628" target="_blank">Get WatcH2O</a>
       </div>
 
-      <!-- BioBattery -->
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/1f/0f/ec/1f0fec4f-bdad-384f-8045-41c1d9cfcce0/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Wellbeing</span>
         <h3>BioBattery</h3>
-        <p class="story">Manage your energy...</p>
-        <div class="personal-note">"BioBattery changes that focus."</div>
+        <p class="story">Manage your energy, not just your time. BioBattery helps you notice when it's time to engage and when it's time for peace.</p>
+        <div class="personal-note">"We track our phone's battery more than our own. BioBattery changes that focus."</div>
         <a class="cta" href="https://apps.apple.com/us/app/biobattery/id6760153002" target="_blank">Get BioBattery</a>
       </div>
 
-      <!-- NUR Time -->
       <div class="card">
         <img class="icon" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d7/3d/7a/d73d7ae5-36e9-5c43-57fa-ac8a7c7d3aec/Placeholder.mill/200x200bb-75.webp">
         <span class="tag">Spiritual</span>
         <h3>NUR Time</h3>
-        <p class="story">Remembrance without interruption...</p>
-        <div class="personal-note">"Built for reflection."</div>
+        <p class="story">Remembrance without interruption. Verses arrive gently on your wrist—never demanding attention, always inviting reflection.</p>
+        <div class="personal-note">"Built for reflection without the noise of a typical notification-heavy world."</div>
         <a class="cta" href="https://apps.apple.com/us/app/nur-time/id6761441301" target="_blank">Get NUR Time</a>
       </div>
 
     </div>
 
-    <!-- everything else (privacy, contact, script) remains unchanged -->
+    <div class="privacy-box">
+      <h2>Privacy by Design</h2>
+      <p style="color: #94a3b8; max-width: 550px; margin: 0 auto; line-height: 1.6;">
+        Nanohabit apps do not track you. They do not profile you. They do not send your data anywhere. Everything stays on your watch — quietly.
+      </p>
+      <div class="manifesto">
+        "I don't believe your watch should be another source of noise. I build these apps with a single intention: to create nano-interventions that lead to macro-change."
+      </div>
+    </div>
+
+    <div class="card" style="max-width: 600px; margin: 80px auto 0; align-items: center; text-align: center;">
+      <span class="tag">Developer</span>
+      <h2 style="margin: 10px 0;">A. Bawary</h2>
+      <p class="story">Have a question or a feature request? Let's connect directly.</p>
+
+      <form id="contactForm" style="width: 100%; margin-top: 20px;">
+        <input type="text" id="userName" placeholder="Your Name" required class="contact-input">
+        <textarea id="userMessage" placeholder="How can I help?" required rows="4" class="contact-input" style="resize:none;"></textarea>
+
+        <div class="math-box">
+          <p style="font-size: 14px; margin-bottom: 10px; font-weight: 600;">Human Verification</p>
+          <label id="mathQuestion" style="font-size: 18px; font-weight: 700;"></label>
+          <input type="number" id="mathAnswer" placeholder="?" 
+                 style="width: 60px; padding: 10px; border-radius: 10px; border: 1px solid #000; text-align: center; margin-left: 10px;">
+        </div>
+
+        <button type="submit" id="sendBtn" class="cta" style="width: 100%; cursor: not-allowed; opacity: 0.5;" disabled>
+          Unlock Form to Send
+        </button>
+      </form>
+      
+      <p id="successMsg" style="display:none; color: var(--accent-gold); font-weight: 600; margin-top: 20px;">
+        Opening your email client...
+      </p>
+    </div>
+
   </section>
 
   <footer>
     © 2026 Nanohabit · Built with intention
   </footer>
 </div>
+
+<script>
+  // Math Puzzle Logic
+  const num1 = Math.floor(Math.random() * 10) + 1;
+  const num2 = Math.floor(Math.random() * 5) + 1;
+  const correctAnswer = num1 + num2;
+  
+  document.getElementById('mathQuestion').innerText = `${num1} + ${num2} = `;
+
+  const mathInput = document.getElementById('mathAnswer');
+  const sendBtn = document.getElementById('sendBtn');
+  const contactForm = document.getElementById('contactForm');
+
+  mathInput.addEventListener('input', () => {
+    if (parseInt(mathInput.value) === correctAnswer) {
+      sendBtn.disabled = false;
+      sendBtn.style.opacity = "1";
+      sendBtn.style.cursor = "pointer";
+      sendBtn.innerText = "Send Message";
+    } else {
+      sendBtn.disabled = true;
+      sendBtn.style.opacity = "0.5";
+      sendBtn.innerText = "Unlock Form to Send";
+    }
+  });
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = "exentiq";
+    const domain = "gmail.com";
+    const subject = `Nanohabit Inquiry from ${document.getElementById('userName').value}`;
+    const body = document.getElementById('userMessage').value;
+    
+    document.getElementById('successMsg').style.display = "block";
+    window.location.href = `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
 
 </body>
 </html>
